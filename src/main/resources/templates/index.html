@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee</title>
-
-    <h1 th:text="'Employee records are shown below:'">Index page</h1>
 </head>
 <body>
+<!--    /*@thymesVar id="Employee" type="com.employee.employeerecord.model.Employee"*/-->
+    <h1 th:text="'Employee records are shown below:'">Index page</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Designation</th>
+        </tr>
+        <tr th:each="employee : ${employees}">
+            <td th:text="${employee.id}">id</td>
+            <td th:text="${employee.firstName}">firstName</td>
+            <td th:text="${employee.lastName}">lastName</td>
+            <td th:text="${employee.designation}">designation</td>
+        </tr>
+    </table>
 
 </body>
 </html>
